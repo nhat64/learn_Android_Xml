@@ -9,7 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.retrofitexample.api.ApiService;
-import com.example.retrofitexample.model.Product;
+import com.example.retrofitexample.api.SeviceBuilder;
+import com.example.retrofitexample.model.User;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,19 +44,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void callApi() {
-        ApiService.apiService.getProduct(2).enqueue(new Callback<Product>() {
+        SeviceBuilder.getApiService().getUsers().enqueue(new Callback<List<User>>() {
             @Override
-            public void onResponse(Call<Product> call, Response<Product> response) {
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 Toast.makeText(MainActivity.this, "Call api success", Toast.LENGTH_SHORT).show();
 
-                Product product = response.body();
-                title.setText(product.getTitle());
-                price.setText(String.valueOf(product.getPrice()));
-                category.setText(product.getCategory());
+                List<User> user = response.body();
+                title.setText(user.get(0).getName());
+                price.setText(user.get(0).getEmail());
+                category.setText(user.get(0).getRole());
             }
 
             @Override
-            public void onFailure(Call<Product> call, Throwable t) {
+            public void onFailure(Call<List<User>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });

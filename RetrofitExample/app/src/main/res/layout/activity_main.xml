@@ -12,19 +12,19 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="title"/>
+        android:text="name"/>
 
     <TextView
         android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="price"/>
+        android:text="email"/>
 
     <TextView
         android:id="@+id/category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="category"/>
+        android:text="role"/>
     
     <Button
         android:layout_marginTop="30dp"
