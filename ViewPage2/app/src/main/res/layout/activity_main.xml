@@ -3,28 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/book_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/book_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPage2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="1" />
+        app:layout_constraintBottom_toBottomOf="@+id/book_background"
+        app:layout_constraintEnd_toEndOf="@+id/book_background"
+        app:layout_constraintHeight_percent="0.77"
+        app:layout_constraintStart_toStartOf="@+id/book_background"
+        app:layout_constraintTop_toTopOf="@+id/book_background"
+        app:layout_constraintWidth_percent="0.77" />
+
     <me.relex.circleindicator.CircleIndicator3
         android:id="@+id/indicator"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:ci_drawable="@color/black"
         app:ci_gravity="center"
         app:ci_height="10dp"
         app:ci_width="10dp"
-        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
